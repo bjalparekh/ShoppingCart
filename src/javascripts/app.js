@@ -1,5 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import ShoppingCart from './pages/ShoppingCart'
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<ShoppingCart />, document.getElementById('wrapper'))
+import ShoppingCart from './pages/ShoppingCart';
+import reducer from '../reducers';
+import Database from '../helpers/database';
+
+import products from '../data/cart.json';
+
+const db = new Database(products.productsInCart);
+const store = createStore(reducer);
+
+render(
+	<Provider store={store}>
+		<ShoppingCart db={db} />
+	</Provider>, document.getElementById('root'));

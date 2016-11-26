@@ -5,7 +5,7 @@ module.exports = {
     context: __dirname,
     entry: {
 			js:'./src/javascripts/app.js',
-			css: './src/stylesheets/main.scss'
+			css: './src/assets/stylesheets/main.scss'
 		},
     output: {
         path: path.join(__dirname, '/dist'),
@@ -29,7 +29,8 @@ module.exports = {
 				{
 					test: /\.scss$/,
 					loader: ExtractTextPlugin.extract('style','css!sass'),
-				}
+				},
+				{ test: /\.json$/, loader: "json-loader" }
 			],
     },
 		plugins: [

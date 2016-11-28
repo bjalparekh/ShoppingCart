@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { remoNumbertProduct } from '../actions';
+import { removeCartProduct } from '../actions';
 
 class CartItemActions extends Component {
 	constructor(props) {

@@ -24,3 +24,6 @@ This Application is purely client side and uses session storage as the database.
 * Automatic discount calculator based on the total number of items.
 * Remove items from cart.
 * Persist cart status across browser reloads.
+
+### Installation
+* git clone 

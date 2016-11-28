@@ -16,11 +16,11 @@ class CartItemActions extends Component {
 	render() {
 		return (
 			<ul className="cart-item-actions">
-				<li className="cart-actions--item" key={1}>Edit</li>
-				<li className="cart-actions--seperator" key={2}>|</li>
-				<li className="cart-actions--item" onClick={this.onClickHander} key={3}>X Remove</li>
-				<li className="cart-actions--seperator" key={4}>|</li>
-				<li className="cart-actions--item" key={5}>Save for later</li>
+				<li className="cart-actions--item">Edit</li>
+				<li className="cart-actions--seperator">|</li>
+				<li className="cart-actions--item" onClick={this.onClickHander}>X Remove</li>
+				<li className="cart-actions--seperator">|</li>
+				<li className="cart-actions--item">Save for later</li>
 			</ul>
 		);
 	}

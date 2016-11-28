@@ -1,8 +1,15 @@
 .cart-checkout {
 	text-align: center;
-	padding: 20px 30px;
 	@include grid-column(12, 0);
 	box-sizing: border-box;
+
+	@include media-max(767) {
+		padding: 20px 30px;
+	}
+
+	@include media(768) {
+		padding: 20px 0;
+	}
 
 	.cart-checkout-action {
 		margin-bottom: 20px;

@@ -11,7 +11,7 @@ export default class CartCheckout extends Component {
 				</div>
 				<div className="cart-checkout-text">
 					<p className="cart-checkout--text">Secure checkout. Shopping is always safe &amp; secure</p>
-					<img src="./images/lock.jpg" alt="lock.jpg" title="Lock" className="cart-checkout--img" />
+					<img src="./dist/images/lock.jpg" alt="lock.jpg" title="Lock" className="cart-checkout--img" />
 				</div>
 			</div>
 		)

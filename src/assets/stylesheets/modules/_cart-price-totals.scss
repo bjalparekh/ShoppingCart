@@ -1,8 +1,15 @@
 .cart-totals {
 	@include grid-column(12, 0);
 	border-top: solid 1px $borderColor;
-	padding: 20px 30px;
 	box-sizing: border-box;
+
+	@include media-max(767) {
+		padding: 20px 30px;
+	}
+
+	@include media(768) {
+		padding: 20px 0;
+	}
 
 	.cart-totals-row {
 		@include grid-column(12);

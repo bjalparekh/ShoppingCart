@@ -12,15 +12,15 @@ export default class CartItems extends Component {
 		return (
 			<div>
 				<ul className="cart-items-header">
-					<li className="cart-items-header--img" key={1}>&nbsp;</li>
-					<li className="cart-items-header--detail" key={2}>&nbsp;</li>
-					<li className="cart-items-header--size" key={3}>SIZE</li>
-					<li className="cart-items-header--qnty" key={4}>QTY</li>
-					<li className="cart-items-header--price" key={5}>PRICE</li>
+					<li className="cart-items-header--img">&nbsp;</li>
+					<li className="cart-items-header--detail">&nbsp;</li>
+					<li className="cart-items-header--size">SIZE</li>
+					<li className="cart-items-header--qnty">QTY</li>
+					<li className="cart-items-header--price">PRICE</li>
 				</ul>
 				<ul className="cart-list">
 					{ this.props.products.map((product, index)=>
-						<CartItem product={product} db={this.props.db} index={index} />
+						<CartItem product={product} db={this.props.db} key={index} />
 					)}
 				</ul>
 			</div>

@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./dist",
-    "copy": "copy ./index.html ./src/assets/images/* ./dist",
-    "build": "webpack && npm run copy"
+    "copy": "copy ./src/assets/images/*.jpg ./src/assets/images/*.xyz ./dist/images",
+    "copyicon": "copy ./src/assets/images/*.ico ./src/assets/images/*.xyz ./dist/images",
+    "build": "webpack && npm run copy && npm run copyicon"
   },
   "keywords": [
     "The Fashion Street"

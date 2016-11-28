@@ -11,7 +11,7 @@ module.exports = {
 		},
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'app.min.js'
+        filename: 'app.js'
     },
     resolve: {
         extensions: ['', '.js', '.json', '.jsx']

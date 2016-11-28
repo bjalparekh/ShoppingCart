@@ -11,9 +11,9 @@ export default class CartItem extends Component {
 	render() {
 		const product = this.props.product || {}
 		return (
-			<li className="cart-list--item" key={this.props.index}>
+			<li className="cart-list--item">
 				<div className="cart-list--itemLeft">
-					<img src={`./images/T${product.p_id}.jpg`} />
+					<img src={`./dist/images/T${product.p_id}.jpg`} />
 				</div>
 				<div className="cart-list--itemRight">
 					<div className="cart-list-col1">

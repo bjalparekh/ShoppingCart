@@ -1,4 +1,6 @@
+var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -9,7 +11,7 @@ module.exports = {
 		},
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'app.js'
+        filename: 'app.min.js'
     },
     resolve: {
         extensions: ['', '.js', '.json', '.jsx']
@@ -34,6 +36,14 @@ module.exports = {
 			],
     },
 		plugins: [
-        new ExtractTextPlugin('main.css', {allChunks: false})
+        new ExtractTextPlugin('main.css', {allChunks: false}),
+				new webpack.optimize.UglifyJsPlugin({
+					compress: { warnings: false },
+					include: /\.min\.js$/
+				}),
+				new OptimizeCssAssetsPlugin({
+					assetNameRegExp: /\.min\.css$/,
+					cssProcessorOptions: { discardComments: { removeAll: true } }
+				})
     ]
 }

@@ -1,0 +1,21 @@
+.cart-footer {
+	margin: 0 30px;
+	padding: 20px 0;
+	line-height: $base-line-height;
+	border-top: 1px solid $borderColor;
+
+	@include media(768) {
+		@include sr-only();
+	}
+
+	.cart-footer--text {
+		line-height: 18px;
+		padding-right: 50px;
+
+		a {
+			@include text-transform;
+			color: $linkTxtColor;
+			text-decoration: underline;
+		}
+	}
+}

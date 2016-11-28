@@ -1,0 +1,44 @@
+body {
+	font-size: $base-font-size;
+	font-family: $font-stack;
+	color: $bodyTxtColor;
+	font-weight: 300;
+	@include reset-space();
+}
+
+main {
+  @include wrapper();
+}
+
+fieldset {
+	border: none;
+	@include reset-space();
+}
+
+.offscreen-desktop {
+	@include media(768) {
+		@include sr-only();
+	}
+}
+
+.offscreen-mobile {
+	@include media-max(767) {
+		@include sr-only();
+	}
+}
+
+.wrapper {
+  @include clearfix();
+	width: 100%;
+  max-width: $grid-max-width;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: underline;
+	color: $grey;
+}
+
+sup {
+	font-size: $fontSmall;
+}

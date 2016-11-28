@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
 export default class CartPriceTotals extends Component {
@@ -18,7 +18,6 @@ export default class CartPriceTotals extends Component {
 		let numberOfItems = this._getNoOfItems(priceDetails)
 		let subTotal = this._calculateSubtotal(priceDetails)
 		let percentage = this._getDiscountPercentage(numberOfItems);
-		console.log("percentage", percentage)
 		return (subTotal*percentage)/100;
 	}
 
@@ -45,7 +44,6 @@ export default class CartPriceTotals extends Component {
 			let quantity = a.quantity + b.quantity
 			return { quantity: quantity }
 		}, { quantity: 0 })
-		console.log("qualtity")
 		return numberOfItems.quantity
 	}
 
@@ -53,14 +51,14 @@ export default class CartPriceTotals extends Component {
 		return (
 			<div className="cart-totals">
 				<dl className="cart-totals-row">
-					<dt className="cart-totals-col">Subtotal</dt>
-					<dd className="cart-totals-col cart-totals-col--price"><sup>&#36;</sup>{this._calculateSubtotal(this.props.priceDetails)}</dd>
-					<dt className="cart-totals-col"><span>Promotion code</span><span>JF 10 applied</span></dt>
-					<dd className="cart-totals-col cart-totals-col--price"><sup>&#36;</sup>-{this._getDiscountPrice(this.props.priceDetails)}</dd>
-					<dt className="cart-totals-col"><span>Estimated shipping<sup>*</sup></span><p>You qualify for free shipping because your order is over $50<sup>*</sup></p></dt>
-					<dd className="cart-totals-col">Free</dd>
-					<dt className="cart-totals-col"><span>Estimated total</span><p>Tax will be applied during checkout</p></dt>
-					<dd className="cart-totals-col cart-totals-col--price"><sup>&#36;</sup>{this._getEstimatedTotal(this.props.priceDetails)}</dd>
+					<dt className="cart-totals-col cart-totals-col__name">Subtotal</dt>
+					<dd className="cart-totals-col cart-totals-col__price"><sup>&#36;</sup>{this._calculateSubtotal(this.props.priceDetails)}</dd>
+					<dt className="cart-totals-col cart-totals-col__name"><span>Promotion code</span><span>JF 10 applied</span></dt>
+					<dd className="cart-totals-col cart-totals-col__price"><sup>&#36;</sup>-{this._getDiscountPrice(this.props.priceDetails)}</dd>
+					<dt className="cart-totals-col cart-totals-col__name"><span>Estimated shipping<sup>*</sup></span><p>You qualify for free shipping because your order is over $50<sup>*</sup></p></dt>
+					<dd className="cart-totals-col cart-totals-col__shipping">Free</dd>
+					<dt className="cart-totals-col cart-totals-col__name cart-totals-col__border"><span>Estimated total</span><p>Tax will be applied during checkout</p></dt>
+					<dd className="cart-totals-col cart-totals-col__price cart-totals-col__border"><sup>&#36;</sup>{this._getEstimatedTotal(this.props.priceDetails)}</dd>
 				</dl>
 			</div>
 		)
@@ -68,6 +66,11 @@ export default class CartPriceTotals extends Component {
 }
 
 CartPriceTotals.propTypes = {
-  products: PropTypes.Array.isRequired,
-  db: PropTypes.Object.isRequired
+  products: PropTypes.array.isRequired,
+  db: PropTypes.object.isRequired
 }
+
+CartPriceTotals.defaultProps = {
+	products: [],
+	db: {},
+};

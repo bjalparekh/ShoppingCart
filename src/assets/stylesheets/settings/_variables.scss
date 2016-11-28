@@ -1,0 +1,41 @@
+///*==============  VARIABLES  ===============*/
+
+$grid-max-width: 							1200px !default; // Padding space 15px either side.
+
+//================= COLORS =====================
+$black:							#000000;
+$darkerGrey:				#555;
+$darkGrey:					#646464;
+$grey:							#AAA;
+$lightGrey:					#CCC;
+$lighterGrey:				#EBEBEB;
+$white: 						#FFF;
+$blue:              #076CBE;
+
+$bodyTxtColor:			$darkGrey;
+$borderColor:				$lighterGrey;
+$bgColor:						$white;
+$linkTxtColor:      $darkGrey;
+
+
+// Font family
+$font-stack: 							Helvetica, Arial, sans-serif;
+
+
+// Font sizes
+$fontSmall:					11px;
+$fontBase:					13px;
+$fontMedium:				14px;
+$fontLarge:					16px;
+$fontXLarge:				22px;
+$fontXXLarge:				26px;;
+
+
+$base-font-size: 					$fontBase;
+$base-line-height:        16px;
+
+$padding-gutter:    20px;
+
+
+// Animation easings
+$animationEasing1:	cubic-bezier(0.455, 0.030, 0.515, 0.955);

@@ -7,25 +7,39 @@ export default class CartItem extends Component {
 	constructor(props) {
 		super(props)
 	}
+
 	render() {
 		const product = this.props.product || {}
 		return (
-			<li>
-				<div>
-					<img src="../../assets/images/" />
+			<li className="cart-list--item" key={this.props.index}>
+				<div className="cart-list--itemLeft">
+					<img src={`./images/T${product.p_id}.jpg`} />
 				</div>
-				<div>
-					<h3>{product.p_variation} {product.p_name}</h3>
-					<dl>
-						<dt>Style #:</dt>
-						<dd>{product.p_style}</dd>
-						<dt>Colour:</dt>
-						<dd>{product.p_selected_color.name}</dd>
-						<dt>Size:</dt>
-						<dd>{product.p_selected_size.code}</dd>
-						<dt>QTY:</dt>
-						<dd><input type="text" value={product.p_quantity} /></dd>
-					</dl>
+				<div className="cart-list--itemRight">
+					<div className="cart-list-col1">
+						<h2><span>{product.p_variation}</span><span>{product.p_name}</span></h2>
+						<dl>
+							<dt>Style #:</dt>
+							<dd className="item-style--value">{product.p_style}</dd>
+							<dt>Colour:</dt>
+							<dd className="item-color--value">{product.p_selected_color.name}</dd>
+						</dl>
+					</div>
+					<div className="cart-list-col2">
+						<dl>
+							<dt className="offscreen-desktop">Size:</dt>
+							<dd className="item-code--value">{product.p_selected_size.code}</dd>
+						</dl>
+					</div>
+					<div className="cart-list-col2">
+						<dl>
+							<dt className="item-quantity offscreen-desktop">QTY:</dt>
+							<dd className="item-quantity--value"><input type="text" defaultValue={product.p_quantity} className="cart-list--input" /></dd>
+						</dl>
+					</div>
+					<div className="cart-list-col2">
+						<span className="item-price--value"><sup>{product.c_currency}</sup>{product.p_price}</span>
+					</div>
 				</div>
 				<CartItemActions id={product.p_id} db={this.props.db} />
 			</li>
@@ -34,6 +48,13 @@ export default class CartItem extends Component {
 }
 
 CartItem.propTypes = {
-  product: PropTypes.Object.isRequired,
-  db: PropTypes.Object.isRequired
+	product: PropTypes.object.isRequired,
+	db: PropTypes.object.isRequired,
+	index: PropTypes.number.isRequired
 }
+
+CartItem.defaultProps = {
+	product: {},
+	db: {},
+	index: 0
+};

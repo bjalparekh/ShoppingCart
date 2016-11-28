@@ -2,9 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 
-import { fetchProducts } from '../../actions';
+import { fetchProducts } from '../actions';
 
 import CartCheckout from '../components/CartCheckout';
+import CartContact from '../components/CartContact.jsx';
 import CartCoupon from '../components/CartCoupon.jsx';
 import CartFooter from '../components/CartFooter';
 import CartHeader from '../components/CartHeader';
@@ -21,15 +22,23 @@ class ShoppingCart extends Component {
 		}
 
 	render() {
-		console.log("props", this.props.products)
 		return (
 			<div className="wrapper">
 				<CartHeader />
 				<main>
-					<CartItems products={this.props.products} db={this.props.db} />
-					<CartCoupon />
-					<CartPriceTotals priceDetails={this.props.priceDetails} />
-					<CartCheckout />
+					<div className="cart-top">
+						<CartItems products={this.props.products} db={this.props.db} />
+					</div>
+					<div className="cart-bottom">
+						<div className="cart-bottom-left">
+							<CartContact />
+						</div>
+						<div className="cart-bottom-right">
+							<CartCoupon />
+							<CartPriceTotals priceDetails={this.props.priceDetails} />
+							<CartCheckout />
+						</div>
+					</div>
 				</main>
 				<CartFooter />
 			</div>
@@ -45,10 +54,16 @@ const mapStateToProps = (state) => {
 };
 
 ShoppingCart.propTypes = {
-  products: PropTypes.Array.isRequired,
-  priceDetails: PropTypes.Array.isRequired,
-  db: PropTypes.Object.isRequired
+  products: PropTypes.array.isRequired,
+  priceDetails: PropTypes.array.isRequired,
+  db: PropTypes.object.isRequired
 }
+
+ShoppingCart.defaultProps = {
+	products: [],
+	priceDetails: [],
+	db: {},
+};
 
 export default ShoppingCart = connect(
 	mapStateToProps

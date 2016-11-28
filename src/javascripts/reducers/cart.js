@@ -8,15 +8,8 @@ export const cart = (state = { products: [], priceDetails: []}, action) => {
 		case 'FETCH_PRODUCTS':
 			return setProductsState(state, action)
 
-		// case 'EDIT_CART_PRODUCT':
-		// 	return state
-
 		case 'REMOVE_CART_PRODUCT':
-			console.log("state", state, action)
 			return setProductsState(state, action)
-
-		// case 'EDIT_PRODUCT_QUANTITY':
-		// 	return state
 
 		default:
 			return state

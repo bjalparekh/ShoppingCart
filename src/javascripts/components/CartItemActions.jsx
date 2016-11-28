@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux'
-import { remoNumbertProduct } from '../../actions';
+import { remoNumbertProduct } from '../actions';
 
 class CartItemActions extends Component {
 	constructor(props) {
@@ -15,18 +15,25 @@ class CartItemActions extends Component {
 
 	render() {
 		return (
-			<ul>
-				<li onClick={this.onClickHandler}>Edit</li>
-				<li onClick={this.onClickHandler} onClick={this.onClickHander}>X Remove</li>
-				<li onClick={this.onClickHandler}>Save for later</li>
+			<ul className="cart-item-actions">
+				<li className="cart-actions--item" key={1}>Edit</li>
+				<li className="cart-actions--seperator" key={2}>|</li>
+				<li className="cart-actions--item" onClick={this.onClickHander} key={3}>X Remove</li>
+				<li className="cart-actions--seperator" key={4}>|</li>
+				<li className="cart-actions--item" key={5}>Save for later</li>
 			</ul>
 		);
 	}
 }
 
 CartItemActions.propTypes = {
-  id: PropTypes.Number.isRequired,
-  db: PropTypes.Object.isRequired
+  id: PropTypes.string.isRequired,
+  db: PropTypes.object.isRequired
 }
+
+CartItemActions.defaultProps = {
+	id: "",
+	db: {},
+};
 
 export default CartItemActions = connect()(CartItemActions);

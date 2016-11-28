@@ -1,0 +1,27 @@
+// Write all your sass functions here
+
+@function strip-units($val) {
+  @return ($val / ($val * 0 + 1));
+}
+
+@function append-px($val) {
+	@if not unitless($val) {
+      $val: strip-units($val);
+  }
+  @return ($val * 1px);
+}
+
+
+//  Flexible Grid
+@function grid($columns, $container-columns: $fg-max-columns, $gutter: $col_margin) {
+  $width: append-px($columns * $col_width + ($columns - 1) * $gutter);
+  $container-width: append-px($container-columns * $col_width + ($container-columns - 1) * $gutter);
+  @return percentage($width / $container-width);
+}
+
+// Flexible gutter
+@function gutter($container-columns: $fg-max-columns, $gutter: $fg-gutter) {
+	$gutter-width: append-px($gutter);
+  $container-width: append-px($container-columns * $col_width + ($container-columns - 1) * $gutter-width);
+  @return percentage($gutter-width / $container-width);
+}

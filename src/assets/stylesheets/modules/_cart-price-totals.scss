@@ -1,0 +1,53 @@
+.cart-totals {
+	@include grid-column(12, 0);
+	border-top: solid 1px $borderColor;
+	padding: 20px 30px;
+	box-sizing: border-box;
+
+	.cart-totals-row {
+		@include grid-column(12);
+
+		.cart-totals-col {
+			margin-left: 0;
+			@include grid-column(6, 0);
+
+			span {
+				display: block;
+			}
+
+			p {
+				color: $lightGrey;
+				@include reset-space();
+				text-transform: lowercase;
+			}
+		}
+
+		.cart-totals-col__name {
+			@include text-transform();
+			margin-bottom: 30px;
+		}
+
+		.cart-totals-col__border {
+			border-top: solid 1px $borderColor;
+			padding-top: 30px;
+		}
+
+		.cart-totals-col__price {
+			font-size: $fontXLarge;
+			text-align: right;
+		}
+
+		.cart-totals-col__shipping {
+			text-align: right;
+		}
+
+		.cart-totals-col__price.cart-totals-col__border {
+			font-size: $fontXXLarge;
+		}
+
+		.cart-totals-col__shipping {
+			font-size: $base-font-size;
+			@include text-transform();
+		}
+	}
+}

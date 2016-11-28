@@ -1,0 +1,27 @@
+%btn {
+	font-size: $base-font-size;
+	padding: 0 15px;
+	border: none;
+	@include text-transform;
+	cursor: pointer;
+	outline: none;
+}
+
+.btn {
+	@extend %btn;
+}
+
+.btn-primary {
+	background: $blue;
+	color: $white;
+	height: 50px;
+	line-height: 50px;
+}
+
+.btn-secondary {
+	background: transparent;
+	color: $bodyTxtColor;
+	border: solid 1px $grey;
+	height: 40px;
+	line-height: 39px;
+}

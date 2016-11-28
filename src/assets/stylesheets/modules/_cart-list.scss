@@ -1,0 +1,120 @@
+.cart-list {
+	border-top: solid 5px $borderColor;
+	border-bottom: solid 5px $borderColor;
+	padding: 30px 0 0 0;
+	margin: 0;
+	list-style: none;
+	@include clearfix();
+	@include grid-column(12, 0);
+
+	.cart-list--item{
+		border-bottom: solid 1px $borderColor;
+		@include wrapper();
+		padding: 15px 20px;
+		box-sizing: border-box;
+
+		.cart-list--itemLeft, .cart-list--itemRight {
+			@include media-max(767) {
+				@include grid-column(6);
+			}
+		}
+
+		.cart-list--itemLeft, {
+			@include media(768) {
+				@include grid-column(2);
+			}
+		}
+
+		.cart-list--itemRight {
+			@include media(768) {
+				@include grid-column(10);
+			}
+		}
+
+		.cart-list--itemRight{
+			h2{
+				@include reset-space();
+				@include text-transform();
+				span {
+					@include media-max(767) {
+						display: block;
+					}
+				}
+			}
+
+			.cart-list--input{
+		    width: 30px;
+    		height: 20px;
+			}
+
+			.item-style--value, .item-code--value {
+				@include text-transform();
+			}
+
+			.item-color--value::first-letter {
+				@include text-transform();
+			}
+
+			.item-quantity {
+				margin-top: 25px;
+			}
+
+			.item-quantity--value {
+				margin-top: 21px;
+			}
+
+			.item-price--value {
+				@include media-max(767) {
+					@include grid-column(12, 0)
+				}
+				font-size: 22px;
+				margin-top: 15px;
+			}
+
+			dl {
+				color: $lightGrey;
+			}
+		}
+
+		&::last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+.cart-items-header{
+	@include media-max(767) {
+		display: none
+	}
+	@include media(768) {
+		@include grid-column(12);
+		padding: 0 20px;
+		list-style: none;
+		@include text-transform();
+		box-sizing: border-box;
+
+		.cart-items-header--img {
+			@include grid-column(2);
+		}
+
+		.cart-items-header--detail {
+				@include grid-column(5);
+		}
+
+		.cart-items-header--size, .cart-items-header--qnty, .cart-items-header--price {
+			@include grid-column(1.66);
+		}
+	}
+}
+
+.cart-list-col1 {
+	@include media(768) {
+		@include grid-column(6);
+	}
+}
+
+.cart-list-col2 {
+	@include media(768) {
+		@include grid-column(2);
+	}
+}

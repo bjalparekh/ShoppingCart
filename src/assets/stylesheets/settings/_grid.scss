@@ -1,0 +1,59 @@
+
+// ------------------------------------------
+// Choose a grid width, the number of columns and the margin between columns.
+// The result of the following equation has to be an integer, not a fraction:
+
+// (width - (columns - 1) * col_margin) / columns = N
+// ------------------------------------------
+
+$padding_width: $padding_gutter;   		// 	max width of main content
+$total_width: 	$grid-max-width;   		// 	max width of main content
+$columns: 			12;    						//  number of columns
+$col_margin: 		10px; 						//  margin between columns - gutter space
+
+// math magic
+$col_width: 			($total_width - ($col_margin * ($columns - 1))) / $columns;
+$col_total_width: $col_width + $col_margin;
+
+
+
+// create row to contains the grid columns
+@mixin outer-container() {
+	@include clearfix();
+	max-width: $total_width;
+	padding: 0 $padding_width;
+	width: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+@mixin wrapper() {
+	@include clearfix();
+	width: 100%;
+	margin: 0;
+}
+
+
+
+// create a column div
+// :first-child is supported in IE8+,
+// so apply gutter on left and remove it for first child.
+
+@mixin grid-column($n: 1, $gutter: $col_margin) {
+	float: left;
+	width: grid($n, $columns, $gutter);
+	display: block;
+
+	@if ($gutter != 0px) {
+		$gutter-val: gutter($columns, $gutter);
+		margin-left: $gutter-val;
+	}
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}

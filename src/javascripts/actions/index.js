@@ -10,15 +10,7 @@ export const fetchProducts = (db) => {
 	priceDetails
 }}
 
-// export const editCartProduct = () => ({
-// 	type: types.EDIT_CART_PRODUCT,
-// })
-
 export const removeCartProduct = (db, productId) => ({
 	type: types.REMOVE_CART_PRODUCT,
 	products: db.removeProducts(productId)
 })
-
-// export const editProductQuantity = (productId) => ({
-// 	type: types.EDIT_PRODUCT_QUANTITY,
-// })

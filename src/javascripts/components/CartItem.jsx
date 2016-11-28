@@ -42,7 +42,9 @@ class CartItem extends Component {
 					<div className="cart-list-col2">
 						<dl>
 							<dt className="item-quantity offscreen-desktop">QTY:</dt>
-							<dd className="item-quantity--value"><label for="quantity"><input type="number" value={product.p_quantity} className="cart-list--input" onChange={this.onQuantityChangeHandler} id="quantity" /></label></dd>
+							<dd className="item-quantity--value">
+								<label for="quantity" className="sr">Product quantity</label>
+								<input type="number" value={product.p_quantity} className="cart-list--input" onChange={this.onQuantityChangeHandler} id="quantity" /></dd>
 						</dl>
 					</div>
 					<div className="cart-list-col2">

@@ -25,10 +25,8 @@ input {
 	}
 }
 
-.offscreen-mobile {
-	@include media-max(767) {
+.sr {
 		@include sr-only();
-	}
 }
 
 .wrapper {

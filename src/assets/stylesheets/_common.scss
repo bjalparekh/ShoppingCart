@@ -4,6 +4,7 @@ body {
 	color: $bodyTxtColor;
 	font-weight: 300;
 	@include reset-space();
+	overflow-x: hidden;
 }
 
 main {

@@ -16,7 +16,7 @@ class CartItemActions extends Component {
 	render() {
 		return (
 			<ul className="cart-item-actions">
-				<li className="cart-actions--item">Edit</li>
+				<li className="cart-actions--item cart-actions--item__first">Edit</li>
 				<li className="cart-actions--seperator">|</li>
 				<li className="cart-actions--item" onClick={this.onClickHander}>X Remove</li>
 				<li className="cart-actions--seperator">|</li>

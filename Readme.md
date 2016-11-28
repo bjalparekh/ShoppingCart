@@ -26,4 +26,7 @@ This Application is purely client side and uses session storage as the database.
 * Persist cart status across browser reloads.
 
 ### Installation
-* git clone 
+* git clone https://github.com/bjalparekh/ShoppingCart.git
+* npm install
+* npm run build
+* open index.html in a browser

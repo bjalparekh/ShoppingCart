@@ -11,7 +11,7 @@ export const fetchProducts = (db) => {
 }}
 
 export const removeCartProduct = (db, productId) => {
-	const products = db.removeProducts(quantity, productId);
+	const products = db.removeProducts(productId);
 	const priceDetails = getPriceDetails(products);
 	return {
 		type: types.REMOVE_CART_PRODUCT,

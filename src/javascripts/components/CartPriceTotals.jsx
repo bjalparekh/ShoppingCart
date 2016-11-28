@@ -7,11 +7,11 @@ export default class CartPriceTotals extends Component {
 	}
 
 	_calculateSubtotal(priceDetails) {
-		let subTotal = priceDetails.reduce(function(a, b){
-			let price = a.price + b.price * b.quantity
-			return { price: price }
-		}, { price: 0 })
-		return subTotal.price
+			let subTotal = priceDetails.reduce(function(a, b){
+					let price = parseInt(a.price) + parseInt(b.price) * parseInt(b.quantity)
+					return { price: parseInt(price) }
+			}, { price: 0 })
+			return subTotal.price
 	}
 
 	_getDiscountPrice(priceDetails) {
@@ -40,11 +40,11 @@ export default class CartPriceTotals extends Component {
 	}
 
 	_getNoOfItems(priceDetails) {
-		let numberOfItems = priceDetails.reduce(function(a, b){
-			let quantity = a.quantity + b.quantity
-			return { quantity: quantity }
-		}, { quantity: 0 })
-		return numberOfItems.quantity
+			let numberOfItems = priceDetails.reduce(function(a, b){
+					let quantity = parseInt(a.quantity) + parseInt(b.quantity);
+					return { quantity: parseInt(quantity) }
+			}, { quantity: 0 })
+			return numberOfItems.quantity
 	}
 
 	render() {

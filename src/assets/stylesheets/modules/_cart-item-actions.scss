@@ -1,4 +1,7 @@
 .cart-item-actions {
+	@include media(768) {
+		width: 315px;
+	}
 	@include text-transform();
 	font-size: $fontSmall;
 	@include grid-column(12);
@@ -7,12 +10,27 @@
 	list-style: none;
 
 	.cart-actions--item {
-		@include grid-column(3.5);
-		text-align: center;
+		@include media-max(767) {
+			@include grid-column(3.5);
+			text-align: center;
+		}
 		cursor: pointer;
+		@include media(768) {
+			display: inline;
+			padding: 0 20px 0 20px;
+
+			&::first-child {
+				padding-left: 10px;
+			}
+		}
 	}
 
 	.cart-actions--seperator {
-		@include grid-column(0.5);
+		@include media-max(767) {
+			@include grid-column(0.5);
+		}
+		@include media(768) {
+			display: inline;
+		}
 	}
 }

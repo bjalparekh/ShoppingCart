@@ -103,6 +103,7 @@
 
 		.cart-items-header--size, .cart-items-header--qnty, .cart-items-header--price {
 			@include grid-column(1.66);
+			text-align: right;
 		}
 	}
 }

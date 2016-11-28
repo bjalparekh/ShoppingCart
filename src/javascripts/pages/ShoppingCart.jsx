@@ -24,7 +24,7 @@ class ShoppingCart extends Component {
 	render() {
 		return (
 			<div className="wrapper">
-				<CartHeader />
+				<CartHeader items={this.props.products.length} />
 				<main>
 					<div className="cart-top">
 						<CartItems products={this.props.products} db={this.props.db} />

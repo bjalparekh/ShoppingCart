@@ -5,7 +5,7 @@ export default class CartCoupon extends Component {
 	render() {
 		return (
 			<div className="cart-coupon">
-				<form id="coupon" method="post">
+				<form id="coupon" method="post" action="javascript:void(0)">
 					<fieldset>
 						<legend className="cart-coupon--text">Enter promotion code<br /> or gift card:</legend>
 						<div className="cart-coupon-action">

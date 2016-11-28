@@ -9,7 +9,8 @@ export default class CartCoupon extends Component {
 					<fieldset>
 						<legend className="cart-coupon--text">Enter promotion code<br /> or gift card:</legend>
 						<div className="cart-coupon-action">
-							<input type="text"  className="cart-coupon--input" />
+							<label for="couponcode"></label>
+							<input type="text"  className="cart-coupon--input" id="couponcode" />
 							<button className="btn btn-secondary cart-coupon--btn">Apply</button>
 						</div>
 					</fieldset>

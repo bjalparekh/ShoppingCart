@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { remoNumbertProduct } from '../actions';
 
 class CartItemActions extends Component {

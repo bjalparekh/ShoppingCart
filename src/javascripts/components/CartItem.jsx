@@ -1,11 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+
+import { editProductQuantity } from '../actions';
 
 import CartItemActions from './CartItemActions';
 
-export default class CartItem extends Component {
+class CartItem extends Component {
 	constructor(props) {
 		super(props)
+		this.onQuantityChangeHandler = this.onQuantityChangeHandler.bind(this);
+	}
+
+	onQuantityChangeHandler(e) {
+		this.props.dispatch(editProductQuantity(this.props.db, e.target.value, this.props.product.p_id))
 	}
 
 	render() {
@@ -34,7 +42,7 @@ export default class CartItem extends Component {
 					<div className="cart-list-col2">
 						<dl>
 							<dt className="item-quantity offscreen-desktop">QTY:</dt>
-							<dd className="item-quantity--value"><input type="text" defaultValue={product.p_quantity} className="cart-list--input" /></dd>
+							<dd className="item-quantity--value"><input type="number" value={product.p_quantity} className="cart-list--input" onChange={this.onQuantityChangeHandler} /></dd>
 						</dl>
 					</div>
 					<div className="cart-list-col2">
@@ -58,3 +66,5 @@ CartItem.defaultProps = {
 	db: {},
 	index: 0
 };
+
+export default CartItem = connect()(CartItem);

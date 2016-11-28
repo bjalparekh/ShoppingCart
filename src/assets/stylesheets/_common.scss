@@ -15,6 +15,10 @@ fieldset {
 	@include reset-space();
 }
 
+input {
+	outline: none;
+}
+
 .offscreen-desktop {
 	@include media(768) {
 		@include sr-only();

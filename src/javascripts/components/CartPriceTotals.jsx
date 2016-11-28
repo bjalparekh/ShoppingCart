@@ -8,7 +8,7 @@ export default class CartPriceTotals extends Component {
 
 	_calculateSubtotal(priceDetails) {
 		let subTotal = priceDetails.reduce(function(a, b){
-			let price = a.price + b.price
+			let price = a.price + b.price * b.quantity
 			return { price: price }
 		}, { price: 0 })
 		return subTotal.price

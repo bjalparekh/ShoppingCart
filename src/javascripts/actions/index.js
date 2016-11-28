@@ -14,3 +14,13 @@ export const removeCartProduct = (db, productId) => ({
 	type: types.REMOVE_CART_PRODUCT,
 	products: db.removeProducts(productId)
 })
+
+export const editProductQuantity = (db, quantity, productId) => {
+	const products = db.editProductQuantity(quantity, productId);
+	const priceDetails = getPriceDetails(products);
+	return {
+	type: types.EDIT_PRODUCT_QUANTITY,
+	products,
+	priceDetails
+	}
+}

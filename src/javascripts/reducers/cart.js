@@ -11,6 +11,9 @@ export const cart = (state = { products: [], priceDetails: []}, action) => {
 		case 'REMOVE_CART_PRODUCT':
 			return setProductsState(state, action)
 
+		case 'EDIT_PRODUCT_QUANTITY':
+			return setProductsState(state, action)
+
 		default:
 			return state
 	}

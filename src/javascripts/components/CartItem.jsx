@@ -43,7 +43,7 @@ class CartItem extends Component {
 						<dl>
 							<dt className="item-quantity offscreen-desktop">QTY:</dt>
 							<dd className="item-quantity--value">
-								<label for="quantity" className="sr">Product quantity</label>
+								<label htmlFor="quantity" className="sr">Product quantity</label>
 								<input type="number" value={product.p_quantity} className="cart-list--input" onChange={this.onQuantityChangeHandler} id="quantity" /></dd>
 						</dl>
 					</div>
